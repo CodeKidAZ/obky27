@@ -3,6 +3,7 @@ import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { AdDirective } from './ad.directive';
 import { AdItem } from './ad-item';
 import { AdComponent } from './ad.component';
+import { HeroJobAdComponent } from './hero-job-ad.component';
 
 @Component({
   selector: 'app-ad-banner',
@@ -14,7 +15,7 @@ import { AdComponent } from './ad.component';
   `,
 })
 export class AdBannerComponent implements OnInit, OnDestroy {
-  @Input() ads: AdItem[] = []; // parent calls a service to populate this array, child uses array.
+  @Input() ads: AdItem[] = []; // parent calls a service to populate this array of objects, child uses array.
 
   currentAdIndex = -1;
 
@@ -35,11 +36,12 @@ export class AdBannerComponent implements OnInit, OnDestroy {
     this.currentAdIndex = (this.currentAdIndex + 1) % this.ads.length;
     const adItem = this.ads[this.currentAdIndex]; // get ad from array
 
+    console.log('hello', this.adHost);
     const viewContainerRef = this.adHost.viewContainerRef; // get container ref
     viewContainerRef.clear();
 
     const componentRef = viewContainerRef.createComponent<AdComponent>(
-      adItem.component
+      HeroJobAdComponent
     );
     // create component using container ref
 

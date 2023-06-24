@@ -10,20 +10,20 @@ export class AdService {
   getAds() {
     return [
       new AdItem(HeroProfileComponent, {
-        name: 'Bombasto',
-        bio: 'Brave as they come',
+        // name: 'Bombasto',
+        // bio: 'Brave as they come',
       }),
       new AdItem(HeroProfileComponent, {
-        name: 'Dr. IQ',
-        bio: 'Smart as they come',
+        // name: 'Dr. IQ',
+        // bio: 'Smart as they come',
       }),
       new AdItem(HeroJobAdComponent, {
-        headline: 'Hiring for several positions',
-        body: 'Submit your resume today!',
+        // headline: 'Hiring for several positions',
+        // body: 'Submit your resume today!',
       }),
       new AdItem(HeroJobAdComponent, {
-        headline: 'Openings in all departments',
-        body: 'Apply today',
+        // headline: 'Openings in all departments',
+        // body: 'Apply today',
       }),
     ];
   }
